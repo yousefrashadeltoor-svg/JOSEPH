@@ -53,7 +53,7 @@ jobs:
         run: gradle --no-daemon --stacktrace assembleDebug
 
       - name: Upload Debug APK
-        if: always()
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: ALPH-Media-Debug-APK
