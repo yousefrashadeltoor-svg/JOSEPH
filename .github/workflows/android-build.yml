@@ -33,6 +33,9 @@ jobs:
           test -f "$RUNNER_TEMP/alph-media/settings.gradle.kts"
           test -f "$RUNNER_TEMP/alph-media/app/build.gradle.kts"
           echo "Project archive extracted successfully."
+          mkdir -p build-overrides
+          cp build-overrides/VideoTransformerEngine.kt "$RUNNER_TEMP/alph-media/app/src/main/java/com/alphmedia/app/media/editor/VideoTransformerEngine.kt"
+          echo "Applied the corrected Kotlin KDoc source file."
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
